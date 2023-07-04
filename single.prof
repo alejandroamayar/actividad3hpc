@@ -3,19 +3,17 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 30.82     50.90    50.90                             Central1D<double>::evalRHS(DataStruct<double>&)
- 21.71     86.76    35.86 7563796224     0.00     0.00  LinearFlux<double>::computeFlux(double const&)
- 16.27    113.64    26.88                             RungeKutta4<double>::stepUi(double)
- 16.17    140.36    26.71                             RungeKutta4<double>::finalizeRK(double)
- 13.11    162.02    21.66                             RungeKutta4<double>::setFi(DataStruct<double>&)
-  1.93    165.21     3.19                             LinearFlux<double>::computeFlux(DataStruct<double>&, DataStruct<double>&)
-  0.02    165.24     0.03        6     5.00     5.00  DataStruct<double>::setSize(int)
-  0.01    165.26     0.02                             write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
-  0.01    165.27     0.01                             RungeKutta4<double>::~RungeKutta4()
-  0.00    165.27     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
-  0.00    165.27     0.00        1     0.00     0.00  RHSOperator<double>::RHSOperator()
-  0.00    165.27     0.00        1     0.00     0.00  FluxFunction<double>::FluxFunction()
-  0.00    165.27     0.00        1     0.00     0.00  main
+ 45.12     49.43    49.43                             Central1D<float>::evalRHS(DataStruct<float>&)
+ 25.16     77.00    27.56 7551796224     0.00     0.00  LinearFlux<float>::computeFlux(float const&)
+ 10.47     88.46    11.47                             RungeKutta4<float>::finalizeRK(float)
+  8.68     97.98     9.51                             RungeKutta4<float>::stepUi(float)
+  7.66    106.37     8.39                             RungeKutta4<float>::setFi(DataStruct<float>&)
+  2.93    109.58     3.21                             LinearFlux<float>::computeFlux(DataStruct<float>&, DataStruct<float>&)
+  0.02    109.60     0.02        6     3.33     3.33  DataStruct<float>::setSize(int)
+  0.00    109.60     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00    109.60     0.00        1     0.00     0.00  RHSOperator<float>::RHSOperator()
+  0.00    109.60     0.00        1     0.00     0.00  FluxFunction<float>::FluxFunction()
+  0.00    109.60     0.00        1     0.00     0.00  main
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -53,58 +51,52 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 2 byte(s) for 0.01% of 165.27 seconds
+granularity: each sample hit covers 2 byte(s) for 0.01% of 109.60 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]     52.5   50.90   35.86                 Central1D<double>::evalRHS(DataStruct<double>&) [1]
-               35.86    0.00 7563796224/7563796224     LinearFlux<double>::computeFlux(double const&) [2]
+[1]     70.3   49.43   27.56                 Central1D<float>::evalRHS(DataStruct<float>&) [1]
+               27.56    0.00 7551796224/7551796224     LinearFlux<float>::computeFlux(float const&) [2]
 -----------------------------------------------
-               35.86    0.00 7563796224/7563796224     Central1D<double>::evalRHS(DataStruct<double>&) [1]
-[2]     21.7   35.86    0.00 7563796224         LinearFlux<double>::computeFlux(double const&) [2]
------------------------------------------------
-                                                 <spontaneous>
-[3]     16.3   26.88    0.00                 RungeKutta4<double>::stepUi(double) [3]
+               27.56    0.00 7551796224/7551796224     Central1D<float>::evalRHS(DataStruct<float>&) [1]
+[2]     25.1   27.56    0.00 7551796224         LinearFlux<float>::computeFlux(float const&) [2]
 -----------------------------------------------
                                                  <spontaneous>
-[4]     16.2   26.71    0.00                 RungeKutta4<double>::finalizeRK(double) [4]
+[3]     10.5   11.47    0.00                 RungeKutta4<float>::finalizeRK(float) [3]
 -----------------------------------------------
                                                  <spontaneous>
-[5]     13.1   21.66    0.00                 RungeKutta4<double>::setFi(DataStruct<double>&) [5]
+[4]      8.7    9.51    0.00                 RungeKutta4<float>::stepUi(float) [4]
 -----------------------------------------------
                                                  <spontaneous>
-[6]      1.9    3.19    0.00                 LinearFlux<double>::computeFlux(DataStruct<double>&, DataStruct<double>&) [6]
------------------------------------------------
-                0.01    0.00       1/6           Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
-                0.03    0.00       5/6           RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [8]
-[7]      0.0    0.03    0.00       6         DataStruct<double>::setSize(int) [7]
+[5]      7.7    8.39    0.00                 RungeKutta4<float>::setFi(DataStruct<float>&) [5]
 -----------------------------------------------
                                                  <spontaneous>
-[8]      0.0    0.00    0.03                 RungeKutta4<double>::RungeKutta4(DataStruct<double>&) [8]
-                0.03    0.00       5/6           DataStruct<double>::setSize(int) [7]
+[6]      2.9    3.21    0.00                 LinearFlux<float>::computeFlux(DataStruct<float>&, DataStruct<float>&) [6]
+-----------------------------------------------
+                0.00    0.00       1/6           Central1D<float>::Central1D(DataStruct<float>&, DataStruct<float>&, FluxFunction<float>&) [9]
+                0.02    0.00       5/6           RungeKutta4<float>::RungeKutta4(DataStruct<float>&) [8]
+[7]      0.0    0.02    0.00       6         DataStruct<float>::setSize(int) [7]
 -----------------------------------------------
                                                  <spontaneous>
-[9]      0.0    0.02    0.00                 write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [9]
+[8]      0.0    0.00    0.02                 RungeKutta4<float>::RungeKutta4(DataStruct<float>&) [8]
+                0.02    0.00       5/6           DataStruct<float>::setSize(int) [7]
 -----------------------------------------------
                                                  <spontaneous>
-[10]     0.0    0.01    0.00                 RungeKutta4<double>::~RungeKutta4() [10]
------------------------------------------------
-                                                 <spontaneous>
-[11]     0.0    0.00    0.01                 Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
-                0.01    0.00       1/6           DataStruct<double>::setSize(int) [7]
-                0.00    0.00       1/1           RHSOperator<double>::RHSOperator() [20]
+[9]      0.0    0.00    0.00                 Central1D<float>::Central1D(DataStruct<float>&, DataStruct<float>&, FluxFunction<float>&) [9]
+                0.00    0.00       1/6           DataStruct<float>::setSize(int) [7]
+                0.00    0.00       1/1           RHSOperator<float>::RHSOperator() [18]
 -----------------------------------------------
                 0.00    0.00       1/1           __libc_csu_init [273]
-[12]     0.0    0.00    0.00       1         main [12]
+[10]     0.0    0.00    0.00       1         main [10]
 -----------------------------------------------
                 0.00    0.00       1/1           __libc_csu_init [273]
-[19]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [19]
+[17]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [17]
 -----------------------------------------------
-                0.00    0.00       1/1           Central1D<double>::Central1D(DataStruct<double>&, DataStruct<double>&, FluxFunction<double>&) [11]
-[20]     0.0    0.00    0.00       1         RHSOperator<double>::RHSOperator() [20]
+                0.00    0.00       1/1           Central1D<float>::Central1D(DataStruct<float>&, DataStruct<float>&, FluxFunction<float>&) [9]
+[18]     0.0    0.00    0.00       1         RHSOperator<float>::RHSOperator() [18]
 -----------------------------------------------
-                0.00    0.00       1/1           LinearFlux<double>::LinearFlux() [38]
-[21]     0.0    0.00    0.00       1         FluxFunction<double>::FluxFunction() [21]
+                0.00    0.00       1/1           LinearFlux<float>::LinearFlux() [40]
+[19]     0.0    0.00    0.00       1         FluxFunction<float>::FluxFunction() [19]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -197,8 +189,7 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [19] _GLOBAL__sub_I_main (main.cpp) [20] RHSOperator<double>::RHSOperator() [21] FluxFunction<double>::FluxFunction()
-   [9] write2File(DataStruct<double>&, DataStruct<double>&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [4] RungeKutta4<double>::finalizeRK(double) [1] Central1D<double>::evalRHS(DataStruct<double>&)
-   [7] DataStruct<double>::setSize(int) [5] RungeKutta4<double>::setFi(DataStruct<double>&) [12] main
-   [6] LinearFlux<double>::computeFlux(DataStruct<double>&, DataStruct<double>&) [3] RungeKutta4<double>::stepUi(double)
-   [2] LinearFlux<double>::computeFlux(double const&) [10] RungeKutta4<double>::~RungeKutta4()
+  [17] _GLOBAL__sub_I_main (main.cpp) [18] RHSOperator<float>::RHSOperator() [19] FluxFunction<float>::FluxFunction()
+   [7] DataStruct<float>::setSize(int) [3] RungeKutta4<float>::finalizeRK(float) [1] Central1D<float>::evalRHS(DataStruct<float>&)
+   [6] LinearFlux<float>::computeFlux(DataStruct<float>&, DataStruct<float>&) [5] RungeKutta4<float>::setFi(DataStruct<float>&) [10] main
+   [2] LinearFlux<float>::computeFlux(float const&) [4] RungeKutta4<float>::stepUi(float)
